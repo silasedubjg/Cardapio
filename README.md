@@ -1,2 +1,2 @@
 # Cardapio
-Proejeto Java Spring/React
+Projeto Java Spring/React
