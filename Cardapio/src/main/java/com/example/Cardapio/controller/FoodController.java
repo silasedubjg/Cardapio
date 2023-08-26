@@ -1,8 +1,12 @@
 package com.example.Cardapio.controller;
 
 import com.example.Cardapio.food.Food;
+import com.example.Cardapio.food.FoodRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 //Indicando ao Spring que esta classe é um controlle
 @RestController
@@ -10,9 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("food")
 public class FoodController {
 
-    //Indicando ao spring quando o endpoint for chamado com o método get esta função é executada
-    public void getAll(){
+    @Autowired
+    private FoodRepository repository;
 
-        Food food;
+
+    //Indicando ao spring quando o endpoint for chamado com o método get esta função é executada
+    public List<Food> getAll(){
+
+        List<Food> foodList = repository.findAll();
+        return foodList;
+
     }
 }
