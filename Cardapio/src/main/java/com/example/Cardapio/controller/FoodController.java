@@ -1,5 +1,6 @@
 package com.example.Cardapio.controller;
 
+import com.example.Cardapio.food.Food;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,5 +13,6 @@ public class FoodController {
     //Indicando ao spring quando o endpoint for chamado com o método get esta função é executada
     public void getAll(){
 
+        Food food;
     }
 }
