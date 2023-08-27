@@ -17,11 +17,17 @@ import java.math.BigInteger;
 @EqualsAndHashCode(of = "id")
 public class Food {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public BigInteger id;
+    @Id
+    public Integer id;
     public String title;
     public String name;
     public Integer price;
 
 
+    public Food(FoodRequestDTO data) {
+        this.id = data.id();
+        this.title = data.title();
+        this.name = data.name();
+        this.price = data.price();
+    }
 }

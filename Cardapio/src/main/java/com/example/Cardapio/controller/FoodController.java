@@ -2,6 +2,7 @@ package com.example.Cardapio.controller;
 
 import com.example.Cardapio.food.Food;
 import com.example.Cardapio.food.FoodRepository;
+import com.example.Cardapio.food.FoodRequestDTO;
 import com.example.Cardapio.food.FoodResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,4 +26,11 @@ public class FoodController {
         return foodList;
     }
 
+    @PostMapping
+    public void saveFood(@RequestBody FoodRequestDTO data){
+        Food foodData = new Food(data);
+        repository.save(foodData);
+        return;
+
+    }
 }
