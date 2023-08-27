@@ -7,9 +7,9 @@ import jakarta.persistence.*;
 @Entity(name = "foods" )
 public class Food {
 
-   @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private String title;
-    private String name;
-    private Integer price;
+    @Id
+    public Integer id;
+    public String title;
+    public String name;
+    public Integer price;
 }
